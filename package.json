@@ -1,0 +1,21 @@
+{
+  "name": "alertix-scraper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "aws-sdk": "^2.1446.0",
+    "puppeteer": "^21.1.1",
+    "puppeteer-extra": "^3.3.6",
+    "puppeteer-extra-plugin-stealth": "^2.11.2",
+    "twilio": "^4.16.0",
+    "zyte-smartproxy-puppeteer": "^1.0.18"
+  }
+}
