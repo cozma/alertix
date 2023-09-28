@@ -84,8 +84,8 @@ const getAlerts = async () => {
         await client.messages
             .create({
                 body: 'ALERT: Resale for ' + event.at(3) + ' available here: ' + process.argv[2],
-                from: '+18559134168',
-                to: '+17039196376'
+                from: '<INSERT TWILIO PHONE NUMBER>',
+                to: '<INSERT DESINATION PHONE NUMBERS>'
             })
         console.log('SMS sent successfully! 🌟');
         await browser.close();
