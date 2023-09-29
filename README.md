@@ -42,6 +42,5 @@ To run this project, you will need to update `index.js` in the following locatio
 3. Run Script
 
 ```bash
-  npm index.js <INSERT LINK TO CONCERT>
+  node index.js <INSERT LINK TO CONCERT>
 ```
-    
