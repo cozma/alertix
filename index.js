@@ -3,8 +3,8 @@ import StealthPlugin from "puppeteer-extra-plugin-stealth";
 import SmartProxy from "zyte-smartproxy-puppeteer";
 import { default as twilio } from 'twilio'
 
-const accountSid = '<INSERT TWILIO ACCOUNT SID>';
-const authToken = '<INSERT TWILIO AUTH TOKEN>';
+const accountSid = 'AC6150d68d820571cf7186324195b8f112';
+const authToken = 'b7b86e6cac5f387cae8da76164ab2fb9';
 const client = twilio(accountSid, authToken);
 
 puppeteer.use(StealthPlugin())
@@ -56,8 +56,8 @@ const getAlerts = async () => {
                     await client.messages
                         .create({
                             body: 'ALERT: Resale for ' + event.at(3) + ' available here: ' + process.argv[2],
-                            from: '<INSERT TWILIO PHONE NUMBER>',
-                            to: '<INSERT DESINATION PHONE NUMBERS>'
+                            from: '+19144835828',
+                            to: '+353873113302'
                         })
                     console.log('SMS sent successfully! 🌟');
                     await browser.close();
@@ -84,8 +84,8 @@ const getAlerts = async () => {
         await client.messages
             .create({
                 body: 'ALERT: Resale for ' + event.at(3) + ' available here: ' + process.argv[2],
-                from: '<INSERT TWILIO PHONE NUMBER>',
-                to: '<INSERT DESINATION PHONE NUMBERS>'
+                from: '+19144835828',
+                to: '+353873113302'
             })
         console.log('SMS sent successfully! 🌟');
         await browser.close();
