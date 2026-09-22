@@ -1,48 +1,47 @@
 [![MIT License](https://img.shields.io/badge/License-MIT-red.svg)](https://choosealicense.com/licenses/mit/) [![Build Passing](https://img.shields.io/badge/Build-Passing-green.svg)]()
 
-
 # Alertix
 
-Alertix is a simple Notification script for Ticketmaster resale tickets. When someone puts up tickets for resale on a sold out event, you get a text alert.
+Alertix is a simple notification script for Ticketmaster resale tickets. When someone lists tickets for resale on a sold-out event, you get a text alert.
 
 ![IMG_2110](https://github.com/cozma/alertix/assets/5613132/1eb918ab-3fc1-413e-8a1e-eb3b24594f12)
 
-# Requirements
+## Requirements
 
-You will need a Twilio account with SMS set up. You can make a Twilio account and follow this simple setup guide: https://www.twilio.com/docs/sms/tutorials/how-work-your-free-twilio-trial-account
+- Node.js 18 or later
+- A Twilio account with SMS set up. Follow [Twilio's trial account guide](https://www.twilio.com/docs/sms/tutorials/how-work-your-free-twilio-trial-account) if you do not have one yet.
 
+## Environment variables
 
+Set these before running the scraper. Do not put credentials in source files.
 
-
-
-## Environment Variables
-
-To run this project, you will need to update `index.js` in the following locations:
-
-`const accountSid = '<INSERT TWILIO ACCOUNT SID>';`
-
-`const authToken = '<INSERT TWILIO AUTH TOKEN>';`
-
-`from: '<INSERT TWILIO PHONE NUMBER>',`
-
-`to: '<INSERT DESINATION PHONE NUMBERS>'`
-
+| Variable | Required | Description |
+| --- | --- | --- |
+| `TWILIO_ACCOUNT_SID` | yes | Twilio account SID |
+| `TWILIO_AUTH_TOKEN` | yes | Twilio auth token |
+| `TWILIO_FROM_NUMBER` | yes | Twilio phone number to send from |
+| `TWILIO_TO_NUMBER` | yes | Phone number that should receive alerts |
+| `HEADLESS` | no | Set to `true` to hide the browser (default is headed, matching the original script) |
+| `USE_ZYTE_SMARTPROXY` | no | Set to `true` to enable Zyte Smart Proxy (paid account required) |
+| `POLL_WINDOW_MS` | no | How long to poll a loaded page before reloading (default `15000`) |
+| `POLL_INTERVAL_MS` | no | Delay between poll checks (default `1000`) |
+| `SNAG_WAIT_MS` | no | Delay before retrying a blocked/"snag" page (default `5000`) |
 
 ## Installation
 
-**NOTE:** You will need Node v18 installed which you can find here: https://nodejs.org/en/download
-
-1. Download Project Zip and Extract contents to working directory
-
-2. Install alertix with NPM. Open your terminal and locate the directory of the project and install the dependencies:
-
 ```bash
-  cd alertix
-  npm install
+cd alertix
+npm install
 ```
 
-3. Run Script
+## Run
 
 ```bash
-  node index.js <INSERT LINK TO CONCERT>
+node index.js https://www.ticketmaster.com/<event-slug>/event/<event-id>
+```
+
+## Tests
+
+```bash
+npm test
 ```
