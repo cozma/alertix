@@ -1,17 +1,24 @@
 {
   "name": "alertix-scraper",
   "version": "1.0.0",
-  "description": "",
+  "description": "SMS alerts when Ticketmaster resale tickets become available",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node index.js",
+    "test": "node --test test/*.test.js"
   },
-  "keywords": [],
+  "keywords": [
+    "ticketmaster",
+    "alerts",
+    "twilio"
+  ],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "type": "module",
+  "engines": {
+    "node": ">=18"
+  },
   "dependencies": {
-    "aws-sdk": "^2.1446.0",
     "puppeteer": "^21.1.1",
     "puppeteer-extra": "^3.3.6",
     "puppeteer-extra-plugin-stealth": "^2.11.2",
